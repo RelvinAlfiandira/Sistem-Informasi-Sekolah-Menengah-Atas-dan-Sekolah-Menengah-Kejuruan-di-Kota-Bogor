@@ -1,0 +1,160 @@
+
+/* === Global Styles === */
+body#daftar-sekolah {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px 0;
+  }
+  /*back*/
+
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+  /*back*/
+
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .title {
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-top: 30px;
+  }
+  
+  /* sekolah */
+  .sekolah-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+  
+  .sekolah {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .sekolah:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .desc {
+    padding: 25px;
+  }
+  
+  .sekolah h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+    color: #3498db;
+  }
+  
+  .sekolah h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .sekolah h3 a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+  }
+  
+  .sekolah p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  /* sekolah */
+
+  /* === Responsive Design === */
+  @media (max-width: 768px) {
+    .sekolah-box {
+      grid-template-columns: 1fr;
+    }
+    
+    .title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .desc {
+      padding: 20px;
+    }
+    
+    .sekolah h3 {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* === Animation for Empty State === */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .sekolah-box p {
+    text-align: center;
+    grid-column: 1/-1;
+    animation: fadeIn 0.5s ease;
+  }
+
+  /* filter sekolah */
+
+   .filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: #3498db;
+    color: white;
+}
+
+.filter-btn:hover {
+    background: #ddd;
+}
+
+.filter-btn.active:hover {
+    background: #2980b9;
+}
+
+.sekolah[data-jenis='sma'] {
+    border-left: 4px solid #3498db;
+}
+
+.sekolah[data-jenis='smk'] {
+    border-left: 4px solid #2ecc71;
+}
+  /* filter sekolah */
